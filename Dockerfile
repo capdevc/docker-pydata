@@ -55,7 +55,7 @@ RUN python setup.py build
 RUN python setup.py install
 RUN python setup.py clean
 
-WORKDIR /home/jovyan/analysis
+WORKDIR /home/jovyan
 
 # Install packages that depend on statsmodels, without clobbering our custom
 # install.
