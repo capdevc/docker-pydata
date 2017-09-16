@@ -27,7 +27,8 @@ RUN conda install --quiet --yes \
     tabulate \
     jupyter_contrib_nbextensions \
     xgboost \
-    pymc3 && \
+    pymc3 \
+    mkl-service && \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR
 
