@@ -1,5 +1,5 @@
-FROM jupyter/scipy-notebook:latest
-MAINTAINER Cristian Capdevila dockerconda@defvar.org
+FROM jupyter/scipy-notebook:ae885c0a6226
+MAINTAINER Cristian Capdevila ccapdevila@prognos.ai
 
 # Change the default jupyter notebook cell width
 RUN mkdir -p /home/jovyan/.jupyter/custom/ && \
@@ -13,27 +13,27 @@ VOLUME ["$HOME/joblib"]
 
 # Install packages I use
 RUN conda install --quiet --yes \
-    awscli \
-    boto3 \
-    pytables \
-    cytoolz \
-    toolz \
-    yapf \
-    ujson \
-    unicodecsv \
-    tqdm \
-    theano \
-    tensorflow \
-    tabulate \
-    jupyter_contrib_nbextensions \
-    xgboost \
-    pymc3 \
-    mkl-service && \
+    awscli=1.11.120 \
+    boto3=1.4.7 \
+    pytables=3.4.2 \
+    cytoolz=0.8.2 \
+    toolz=0.8.2 \
+    yapf=0.17.0 \
+    ujson=1.35 \
+    unicodecsv=0.14.1 \
+    tqdm=4.15.0 \
+    theano=0.9.0 \
+    tensorflow=1.3.0 \
+    tabulate=0.7.7 \
+    jupyter_contrib_nbextensions=0.3.1 \
+    xgboost=0.6a2 \
+    pymc3=3.1 \
+    mkl-service=1.1.2 && \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR
 
 # Install imbalanced learn from it's channel
-RUN conda install --quiet --yes -c glemaitre imbalanced-learn
+RUN conda install --quiet --yes -c glemaitre imbalanced-learn=0.3.0
 
 # Turn on jupyter extensions
 RUN jupyter contrib nbextension install --sys-prefix
@@ -60,4 +60,4 @@ WORKDIR /home/jovyan
 
 # Install packages that depend on statsmodels, without clobbering our custom
 # install.
-RUN conda install --yes  --no-deps seaborn category_encoders
+RUN conda install --yes  --no-deps seaborn=0.8.1 category_encoders=1.2.4
