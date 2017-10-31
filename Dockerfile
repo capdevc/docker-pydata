@@ -1,4 +1,4 @@
-FROM jupyter/scipy-notebook:da2c5a4d00fa
+FROM jupyter/scipy-notebook:ae885c0a6226
 MAINTAINER Cristian Capdevila ccapdevila@prognos.ai
 
 # Change the default jupyter notebook cell width
