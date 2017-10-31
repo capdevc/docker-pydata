@@ -1,4 +1,4 @@
-FROM jupyter/scipy-notebook:ae885c0a6226
+FROM jupyter/scipy-notebook:da2c5a4d00fa
 MAINTAINER Cristian Capdevila ccapdevila@prognos.ai
 
 # Change the default jupyter notebook cell width
@@ -17,6 +17,7 @@ RUN conda install --quiet --yes \
     boto3=1.4.7 \
     s3fs=0.1.2 \
     pytables=3.4.2 \
+    pyarrow=0.7.1 \
     cytoolz=0.8.2 \
     toolz=0.8.2 \
     yapf=0.17.0 \
