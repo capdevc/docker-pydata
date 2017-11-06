@@ -15,6 +15,7 @@ VOLUME ["$HOME/joblib"]
 RUN conda install --quiet --yes \
     awscli=1.11.120 \
     boto3=1.4.7 \
+    boto=2.48.0 \
     s3fs=0.1.2 \
     pytables=3.4.2 \
     pyarrow=0.7.1 \
