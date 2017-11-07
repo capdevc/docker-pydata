@@ -39,8 +39,11 @@ RUN conda install --quiet --yes \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR
 
-# Install imbalanced learn from it's channel
+# Install imbalanced learn from its channel
 RUN conda install --quiet --yes -c glemaitre imbalanced-learn=0.3.1
+
+# Install yellowbrick from its channel
+RUN conda install --quiet --yes -c districtdatalabs yellowbrick=0.5
 
 # Turn on jupyter extensions
 RUN jupyter contrib nbextension install --sys-prefix
@@ -69,7 +72,7 @@ WORKDIR /home/jovyan
 # install.
 RUN conda install --yes  --no-deps seaborn=0.8.1 category_encoders=1.2.4
 
+
 # Install things only on pypi
 RUN pip install \
-    yellowbrick==0.5 \
     lime==0.1.1.25
