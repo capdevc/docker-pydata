@@ -17,6 +17,8 @@ RUN conda install --quiet --yes \
     boto3=1.4.7 \
     boto=2.48.0 \
     s3fs=0.1.2 \
+    dask=0.15.4 \
+    distributed=1.19.3 \
     pytables=3.4.2 \
     pyarrow=0.7.1 \
     cytoolz=0.8.2 \
@@ -24,19 +26,21 @@ RUN conda install --quiet --yes \
     yapf=0.17.0 \
     ujson=1.35 \
     unicodecsv=0.14.1 \
-    tqdm=4.15.0 \
+    tqdm=4.19.4 \
     theano=0.9.0 \
     tensorflow=1.3.0 \
-    tabulate=0.7.7 \
-    jupyter_contrib_nbextensions=0.3.1 \
+    tabulate=0.8.1 \
+    jupyter_contrib_nbextensions=0.3.3 \
     xgboost=0.6a2 \
-    pymc3=3.1 \
+    lightgbm=2.0.10 \
+    pymc3=3.2 \
+    eli5=0.8 \
     mkl-service=1.1.2 && \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR
 
 # Install imbalanced learn from it's channel
-RUN conda install --quiet --yes -c glemaitre imbalanced-learn=0.3.0
+RUN conda install --quiet --yes -c glemaitre imbalanced-learn=0.3.1
 
 # Turn on jupyter extensions
 RUN jupyter contrib nbextension install --sys-prefix
@@ -64,3 +68,8 @@ WORKDIR /home/jovyan
 # Install packages that depend on statsmodels, without clobbering our custom
 # install.
 RUN conda install --yes  --no-deps seaborn=0.8.1 category_encoders=1.2.4
+
+# Install things only on pypi
+RUN pip install \
+    yellowbrick==0.5 \
+    lime==0.1.1.25

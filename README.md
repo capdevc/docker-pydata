@@ -9,11 +9,19 @@ In addition to those included in the base image, I have added:
  - [tensorflow](https://github.com/tensorflow/tensorflow) (CPU Only)
  - [awscli](https://github.com/aws/aws-cli)
  - [boto3](https://github.com/boto/boto3)
+ - [dask](https://github.com/dask/dask)
+ - [pyarrow](https://arrow.apache.org/)
  - [tqdm](https://github.com/noamraph/tqdm)
  - [tabulate](https://bitbucket.org/astanin/python-tabulate)
+ - [cytoolz](https://github.com/pytoolz/cytoolz)
  - [theano](https://github.com/Theano/Theano) (For PyMC3)
  - [pymc3](https://github.com/pymc-devs/pymc3)
  - [xgboost](https://github.com/dmlc/xgboost/tree/master/python-package)
+ - [lightgbm](https://github.com/Microsoft/LightGBM)
+ - [imbalanced-learn](https://github.com/scikit-learn-contrib/imbalanced-learn)
+ - [yellowbrick](https://github.com/DistrictDataLabs/yellowbrick)
+ - [eli5](https://github.com/TeamHG-Memex/eli5)
+ - [lime](https://github.com/marcotcr/lime)
 
 ## Usage
 
