@@ -31,7 +31,6 @@ RUN conda install --quiet --yes \
     tensorflow=1.3.0 \
     tabulate=0.8.1 \
     jupyter_contrib_nbextensions=0.3.3 \
-    xgboost=0.6a2 \
     lightgbm=2.0.10 \
     pymc3=3.2 \
     eli5=0.8 \
@@ -65,6 +64,12 @@ WORKDIR /home/jovyan/statsmodels
 RUN python setup.py build
 RUN python setup.py install
 RUN python setup.py clean
+
+# Install xgboost from github
+RUN git clone --recursive https://github.com/dmlc/xgboost && \
+    cd xgboost && \
+    make -j4 && \
+    cd python-package; python setup.py install
 
 WORKDIR /home/jovyan
 
