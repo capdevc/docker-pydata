@@ -80,4 +80,5 @@ RUN conda install --yes  --no-deps seaborn=0.8.1 category_encoders=1.2.4
 
 # Install things only on pypi
 RUN pip install \
-    lime==0.1.1.25
+    lime==0.1.1.25 \
+    ml_insights==0.0.17

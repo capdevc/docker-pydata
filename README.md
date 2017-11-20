@@ -22,6 +22,7 @@ In addition to those included in the base image, I have added:
  - [yellowbrick](https://github.com/DistrictDataLabs/yellowbrick)
  - [eli5](https://github.com/TeamHG-Memex/eli5)
  - [lime](https://github.com/marcotcr/lime)
+ - [ml_insights](https://github.com/numeristical/introspective)
 
 ## Usage
 
